@@ -3,100 +3,100 @@ declare type Install<T> = T & {
     install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
-    rate: {
+    value: {
+        type: (NumberConstructor | StringConstructor)[];
+    };
+    max: {
         type: NumberConstructor;
         default: number;
     };
-    digits: {
+    dot: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+    bubble: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+    hidden: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+    top: {
+        type: StringConstructor;
+        default: string;
+    };
+    right: {
+        type: StringConstructor;
+        default: string;
+    };
+    zIndex: {
         type: NumberConstructor;
         default: number;
     };
-    showSign: {
-        type: BooleanConstructor;
-        default: boolean;
-    };
-    showZero: {
-        type: BooleanConstructor;
-        default: boolean;
-    };
-    arrowLeft: {
-        type: BooleanConstructor;
-        default: boolean;
-    };
-    syncTextColor: {
-        type: BooleanConstructor;
-        default: boolean;
-    };
-    textColor: {
-        type: StringConstructor;
-        default: string;
-    };
-    riseColor: {
-        type: StringConstructor;
-        default: string;
-    };
-    dropColor: {
+    color: {
         type: StringConstructor;
         default: string;
     };
 }, {
-    calcRate: import("vue").ComputedRef<string>;
-    calcStyle: import("vue").ComputedRef<{
-        color: string;
+    state: {};
+    stl: import("vue").ComputedRef<{
+        top: string;
+        right: string;
+        zIndex: number;
+        background: string;
     }>;
-    rateTrend: import("vue").Ref<boolean>;
+    content: import("vue").ComputedRef<string | number | undefined>;
 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
-    rate: {
+    value: {
+        type: (NumberConstructor | StringConstructor)[];
+    };
+    max: {
         type: NumberConstructor;
         default: number;
     };
-    digits: {
+    dot: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+    bubble: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+    hidden: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+    top: {
+        type: StringConstructor;
+        default: string;
+    };
+    right: {
+        type: StringConstructor;
+        default: string;
+    };
+    zIndex: {
         type: NumberConstructor;
         default: number;
     };
-    showSign: {
-        type: BooleanConstructor;
-        default: boolean;
-    };
-    showZero: {
-        type: BooleanConstructor;
-        default: boolean;
-    };
-    arrowLeft: {
-        type: BooleanConstructor;
-        default: boolean;
-    };
-    syncTextColor: {
-        type: BooleanConstructor;
-        default: boolean;
-    };
-    textColor: {
-        type: StringConstructor;
-        default: string;
-    };
-    riseColor: {
-        type: StringConstructor;
-        default: string;
-    };
-    dropColor: {
+    color: {
         type: StringConstructor;
         default: string;
     };
 }>>, {
-    textColor: string;
-    rate: number;
-    digits: number;
-    showSign: boolean;
-    showZero: boolean;
-    arrowLeft: boolean;
-    syncTextColor: boolean;
-    riseColor: string;
-    dropColor: string;
+    color: string;
+    right: string;
+    top: string;
+    zIndex: number;
+    hidden: boolean;
+    dot: boolean;
+    max: number;
+    bubble: boolean;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
     interface GlobalComponents {
-        NutTrendArrow: typeof _default;
+        NutBadge: typeof _default;
     }
 }
