@@ -43,7 +43,7 @@ import { ref, onMounted, reactive, provide, computed, watch, onActivated, nextTi
 import { _ as _sfc_main$1 } from "../index.taro.vue_vue_type_script_setup_true_lang-JJ7hr71Y.js";
 import { JoySmile } from "@nutui/icons-vue-taro";
 import { c as createComponent } from "../component-DQf3CENX.js";
-import { T as TypeOfFun } from "../util-CyCQsn5J.js";
+import { T as TypeOfFun } from "../util-7oDGftbO.js";
 import { p as pxCheck } from "../pxCheck-DN6FYV6q.js";
 import { r as requestAniFrame } from "../raf-CzJhCkQo.js";
 import { u as useTouch } from "../index-I8tfW3Kf.js";
@@ -331,12 +331,10 @@ const _sfc_main = create({
           const titleRect = titleRectRef.value[currentIndex.value];
           let to = 0;
           if (props.direction === "vertical") {
-            const DEFAULT_PADDING = 11;
-            const top = titleRects.slice(0, currentIndex.value).reduce((prev, curr) => prev + (curr == null ? void 0 : curr.height) + 0, DEFAULT_PADDING);
+            const top = titleRects.slice(0, currentIndex.value).reduce((prev, curr) => prev + (curr == null ? void 0 : curr.height), 0);
             to = top - (((_c = navRectRef.value) == null ? void 0 : _c.height) - (titleRect == null ? void 0 : titleRect.height)) / 2;
           } else {
-            const DEFAULT_PADDING = 31;
-            const left = titleRects.slice(0, currentIndex.value).reduce((prev, curr) => prev + (curr == null ? void 0 : curr.width) + 20, DEFAULT_PADDING);
+            const left = titleRects.slice(0, currentIndex.value).reduce((prev, curr) => prev + (curr == null ? void 0 : curr.width), 0);
             to = left - (((_d = navRectRef.value) == null ? void 0 : _d.width) - (titleRect == null ? void 0 : titleRect.width)) / 2;
           }
           nextTick(() => {
@@ -453,9 +451,9 @@ const _sfc_main = create({
         return {};
       const px = pxCheck(props.titleGutter);
       if (props.direction === "vertical") {
-        return { marginTop: px, marginBottom: px };
+        return { paddingTop: px, paddingBottom: px };
       }
-      return { marginLeft: px, marginRight: px };
+      return { paddingLeft: px, paddingRight: px };
     });
     return __spreadValues(__spreadValues({
       titles,

@@ -42,7 +42,7 @@ import { ref, onMounted, reactive, provide, computed, watch, onActivated, nextTi
 import NutSticky from "../sticky/Sticky.js";
 import { JoySmile } from "@nutui/icons-vue";
 import { c as createComponent } from "../component-DQf3CENX.js";
-import { T as TypeOfFun } from "../util-6wYEjmEl.js";
+import { T as TypeOfFun } from "../util-DnfK0Qan.js";
 import { p as pxCheck } from "../pxCheck-DN6FYV6q.js";
 import { u as useRect } from "../index-B1qsj2XR.js";
 import { r as requestAniFrame } from "../raf-c01wDYCo.js";
@@ -433,9 +433,9 @@ const _sfc_main = create({
         return {};
       const px = pxCheck(props.titleGutter);
       if (props.direction === "vertical") {
-        return { marginTop: px, marginBottom: px };
+        return { paddingTop: px, paddingBottom: px };
       }
-      return { marginLeft: px, marginRight: px };
+      return { paddingLeft: px, paddingRight: px };
     });
     return __spreadValues(__spreadValues({
       navRef,
